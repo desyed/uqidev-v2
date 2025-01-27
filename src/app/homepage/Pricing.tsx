@@ -1,6 +1,7 @@
 import GradientTitle from '@/components/custom/grad-title';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const Pricing = () => {
@@ -12,7 +13,7 @@ const Pricing = () => {
                     <div className=' lg:w-2/3 mx-auto py-20'>
                         <GradientTitle className='text-2xl md:text-3xl lg:text-6xl leading-none' text='Colab With Uqidev and Start Building Your Future Today' />
                         <p className="text-neutral-400 my-8">At Uqidev, we believe innovation thrives in collaboration. Let’s create something extraordinary together.</p>
-                        <Button className='bg-gradient-to-b from-neutral-400 via-neutral-500 to-neutral-600'>Explore Our Services</Button>
+                        <Link href={'/about'}><Button className='bg-gradient-to-b from-neutral-400 via-neutral-500 to-neutral-600'>Explore Our Services</Button></Link>
                     </div>
                 </div>
             </div>

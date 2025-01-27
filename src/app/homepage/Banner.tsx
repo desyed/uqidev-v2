@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import React from 'react';
@@ -8,6 +9,7 @@ import wid1 from "@/../public/uqi/banner1.jpg"
 import wid2 from "@/../public/uqi/banner2.jpg"
 import wid3 from "@/../public/uqi/banner3.jpg"
 import wid4 from "@/../public/uqi/banner4.jpg"
+import Link from 'next/link';
 
 const Banner = () => {
     return (
@@ -24,8 +26,8 @@ const Banner = () => {
                     We bridge imagination and technology, engineering digital experiences that blend creativity, precision, and unmatched scalability
                     </p>
                     <div className='relative flex flex-col max-w-xl gap-2 mt-12 sm:flex-row'>
-                        <Button className='bg-gradient-to-b from-neutral-400 via-neutral-500 to-neutral-600'>Buy Vanta</Button>
-                        <Button className='border border-neutral-700 bg-gradient-to-b from-neutral-800 to-neutral-900'>See all pages</Button>
+                        <Link href={'/contact'}><Button className='bg-gradient-to-b from-neutral-400 via-neutral-500 to-neutral-600'>Send message</Button></Link>
+                        <Link href={'/about'}><Button className='border border-neutral-700 bg-gradient-to-b from-neutral-800 to-neutral-900'>Explore Uqidev</Button></Link>
                     </div>
 
                     <div className=" justify-between  mt-12 -ml-4 lg:mt-24 flex">

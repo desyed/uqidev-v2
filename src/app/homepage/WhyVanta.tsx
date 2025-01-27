@@ -1,5 +1,6 @@
 import GradientTitle from '@/components/custom/grad-title';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 import React from 'react';
 
 const WhyVanta = () => {
@@ -11,9 +12,9 @@ const WhyVanta = () => {
                         <GradientTitle text='Why Partner with Uqidev?' />
                         <p className="text-neutral-400">Experience a seamless fusion of creativity, innovation, and technical expertise, delivering tailored solutions that elevate your brand and accelerate your success</p>
                     </div>
-                    <div className='relative flex  gap-2 mt-12 justify-center items-center lg:w-1/2'>
-                        <Button className='bg-gradient-to-b from-neutral-400 via-neutral-500 to-neutral-600 lg:w-1/3'>Learn More</Button>
-                        <Button className='border border-neutral-700 bg-gradient-to-b from-neutral-800 to-neutral-900 lg:w-1/3'>Get in touch</Button>
+                    <div className='relative flex  gap-2 mt-12 justify-start md:justify-center items-center lg:w-1/2'>
+                        <Link href={'/about'}><Button className='bg-gradient-to-b from-neutral-400 via-neutral-500 to-neutral-600'>Learn More</Button></Link>
+                        <Link href={'/contact'}><Button className='border border-neutral-700 bg-gradient-to-b from-neutral-800 to-neutral-900'>Get in touch</Button></Link>
                     </div>
                 </div>
             </div>
