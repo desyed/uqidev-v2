@@ -20,7 +20,7 @@ const Banner = () => {
             <div className='flex flex-col lg:flex-row justify-between items-center h-full mt-20 lg:mt-0'>
                 <div className='lg:w-1/2'>
                     <h1 className=" pb-2 text-5xl leading-normal font-normal tracking-tight text-transparent bg-gradient-to-r from-neutral-50 via-neutral-400 to-neutral-600 bg-clip-text font-display">
-                        Web Solutions That Inspire Innovation
+                        Inspiring Innovation
                     </h1>
                     <p className="md:w-4/5 mt-4 text-neutral-400">
                     We bridge imagination and technology, engineering digital experiences that blend creativity, precision, and unmatched scalability.
