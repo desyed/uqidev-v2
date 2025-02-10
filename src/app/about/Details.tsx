@@ -8,7 +8,6 @@ const Details = () => {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Left Side - Text Content */}
                     <div>
-                        <GradientTitle className="text-4xl" text="UQIDEV" />
                         <p className="text-neutral-400 mb-8 leading-relaxed">
                             we specialize in crafting cutting-edge digital solutions that empower businesses to thrive in the online world.
                             Our goal is to bridge the gap between ideas and execution by delivering tailored web applications, modern designs,
