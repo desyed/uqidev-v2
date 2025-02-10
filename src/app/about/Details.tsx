@@ -8,9 +8,9 @@ const Details = () => {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Left Side - Text Content */}
                     <div>
-                        <GradientTitle className="text-4xl" text="Learn About Us" />
+                        <GradientTitle className="text-4xl" text="UQIDEV" />
                         <p className="text-neutral-400 mb-8 leading-relaxed">
-                            At Uqidev, we specialize in crafting cutting-edge digital solutions that empower businesses to thrive in the online world.
+                            we specialize in crafting cutting-edge digital solutions that empower businesses to thrive in the online world.
                             Our goal is to bridge the gap between ideas and execution by delivering tailored web applications, modern designs,
                             and scalable systems. We are dedicated to helping businesses enhance their digital presence and achieve their goals
                             with innovation and precision.
@@ -58,6 +58,43 @@ const Details = () => {
                     </div>
                 </div>
 
+            </div>
+
+            <div className="lg:grid lg:grid-cols-4 mt-12 gap-2 hidden">
+                <div>
+                    <div className="lg:ring-white/10 lg:ring-1 lg:p-2 lg:rounded-3xl lg:bg-gradient-to-t from-white/20 hover:rotate-0 duration-500 lg:rotate-6">
+                        <img className="block ring-1 ring-white/10 rounded-2xl shadow-massive" src="/about/head1.svg" />
+                    </div>
+                </div>
+                <div>
+                    <div className="lg:ring-white/10 lg:ring-1 lg:p-2 lg:rounded-3xl lg:bg-gradient-to-t from-white/20 hover:rotate-0 duration-500 lg:-rotate-12">
+                        <img className="block ring-1 ring-white/10 rounded-2xl shadow-massive" src="/about/head2.svg" />
+                    </div>
+                </div>
+                <div>
+                    <div className="lg:ring-white/10 lg:ring-1 lg:p-2 lg:rounded-3xl lg:bg-gradient-to-t from-white/20 hover:rotate-0 duration-500 lg:-rotate-12">
+                        <img className="block ring-1 ring-white/10 rounded-2xl shadow-massive" src="/about/head4.svg" />
+                    </div>
+                </div>
+                <div>
+                    <div className="ring-white/10 lg:ring-1 lg:p-2 lg:rounded-3xl lg:bg-gradient-to-t from-white/20 lg: rotate-12 hover:rotate-0 duration-500">
+                        <img className="block ring-1 ring-white/10 rounded-2xl shadow-massive" src="/about/head6.svg" />
+                    </div>
+                </div>
+            </div>
+            <div className="grid gap-x-8 gap-y-16 text-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 py-24">
+                {[
+                    { label: "Projects Completed", value: "150+" },
+                    { label: "Happy Clients", value: "120+" },
+                    { label: "Team Members", value: "25+" },
+                ].map((item, index) => (
+                    <div key={index} className="mx-auto flex max-w-xs flex-col gap-y-4">
+                        <div className="order-first text-3xl font-semibold tracking-tight text-white font-display sm:text-5xl">
+                            {item.value}
+                        </div>
+                        <div className="leading-7 text-neutral-300">{item.label}</div>
+                    </div>
+                ))}
             </div>
         </section>
     );

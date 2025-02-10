@@ -95,9 +95,7 @@ const Footer = () => {
 
                         <div className="mt-8 pt-6 text-sm text-neutral-400">
                             <p className="mb-6">&copy; 2022 Uqidev. All rights reserved.</p>
-                            <p className="mt-2">
-                                Uqidev is an independent software agency with no affiliation or endorsement from organizations mentioned. This website was proudly crafted by the Uqidev team. Designed and developed with passion, wherever innovation thrives.
-                            </p>
+                            
                         </div>
 
                     </div>

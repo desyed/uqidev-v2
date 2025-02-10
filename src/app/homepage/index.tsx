@@ -11,10 +11,10 @@ const Homepage = () => {
         <div className='space-y-20 md:space-y-40 mx-5'>
             <Banner />
             <Features />
-            <CoursesSection />
+            {/* <CoursesSection /> */}
             <WhyVanta />
             <SkillJourney />
-            <Pricing />
+            {/* <Pricing /> */}
         </div>
     );
 };

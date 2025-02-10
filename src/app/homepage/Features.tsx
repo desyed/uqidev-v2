@@ -28,32 +28,32 @@ const Features: React.FC = () => {
         {
             icon: <FiSettings />,
             title: 'Tailored Solutions',
-            description: 'We craft unique, client-focused digital experiences that align with your specific goals and vision.',
+            description: 'Tailored software solutions to streamline your business operations and enhance efficiency.',
         },
         {
             icon: <FiMessageCircle />,
-            title: 'Seamless Collaboration',
-            description: 'Foster transparent communication and collaboration throughout the project lifecycle for exceptional outcomes.',
+            title: 'Web & Mobile App Development',
+            description: 'Responsive, high-performance web and mobile applications designed for an exceptional user experience.',
         },
         {
             icon: <FiFileText />,
-            title: 'Rich, Dynamic Interfaces',
-            description: 'Delivering interactive and visually compelling interfaces that captivate users and enhance engagement.',
+            title: 'UI/UX Design',
+            description: 'Intuitive and visually appealing designs that enhance user engagement and brand identity.',
         },
         {
             icon: <FiMonitor />,
-            title: 'Cross-Platform Accessibility',
-            description: 'Ensure your digital presence is optimized for seamless performance across all devices and platforms.',
+            title: 'Cloud Solutions',
+            description: 'Scalable cloud infrastructure and services to optimize performance and security.',
         },
         {
             icon: <FiActivity />,
-            title: 'Real-Time Progress Tracking',
-            description: 'Stay informed with regular updates and insights into project milestones and development progress.',
+            title: 'E-commerce Development',
+            description: 'Feature-rich online stores with secure payment integrations for seamless shopping experiences',
         },
         {
             icon: <FiUsers />,
-            title: 'Expert-Driven Development',
-            description: 'Leverage the expertise of skilled professionals committed to bringing your ideas to life with precision.',
+            title: 'IT Consulting & Support',
+            description: 'Expert guidance and ongoing support to help businesses navigate digital transformation.',
         },
     ];
     
@@ -63,7 +63,7 @@ const Features: React.FC = () => {
             <div className="max-w-6xl mx-auto space-y-2">
                 <div className='bg-gradient-to-b from-black to-neutral-800 rounded-3xl border border-neutral-800'>
                     <div className="bg-gradient-to-b from-neutral-950 to-neutral-800 rounded-2xl border border-neutral-800 shadow-md m-[6px] text-center space-y-4 ">
-                        <div className='md:w-1/3 mx-auto py-10'>
+                        <div className='md:w-1/2 mx-auto py-10'>
                             <GradientTitle text='Where Ideas Meet Execution' />
                             <p className="text-neutral-400">Transforming challenges into seamless and impactful digital experiences.</p>
                         </div>
