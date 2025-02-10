@@ -9,7 +9,7 @@ const WhyVanta = () => {
             <div className='bg-gradient-to-b from-black to-neutral-800 rounded-3xl border border-neutral-800'>
                 <div className="bg-gradient-to-b from-neutral-950 to-neutral-800 rounded-2xl border border-neutral-800 shadow-md m-[6px] flex flex-col lg:flex-row space-y-4 p-3 md:px-8 py-16 ">
                     <div className=' '>
-                        <GradientTitle text='Why Choose UQIDEV?' />
+                        <GradientTitle text='WE OFFER ' />
                         <p className="text-neutral-400">
                         🚀 Innovative Solutions – We craft cutting-edge software tailored to your business needs. <br />
 
