@@ -64,7 +64,7 @@ const Footer = () => {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
-                                            @uqidev
+                                            @UQIDEV
                                         </a>
                                     </li>
                                     <li className="flex items-center gap-2">
@@ -94,7 +94,7 @@ const Footer = () => {
                         </div>
 
                         <div className="mt-8 pt-6 text-sm text-neutral-400">
-                            <p className="mb-6">&copy; 2022 Uqidev. All rights reserved.</p>
+                            <p className="mb-6">&copy; 2022 UQIDEV. All rights reserved.</p>
                             
                         </div>
 

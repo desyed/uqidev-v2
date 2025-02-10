@@ -52,7 +52,7 @@ const Details = () => {
                     <div>
                         <h3 className="text-xl mb-3">3. Build Lasting Partnerships</h3>
                         <p className="text-neutral-400 leading-relaxed">
-                            At Uqidev, we believe in collaborating with our clients to understand their needs and deliver solutions that truly make an impact.
+                            At UQIDEV, we believe in collaborating with our clients to understand their needs and deliver solutions that truly make an impact.
                         </p>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const Loading: React.FC = () => {
     const initialText = "Building Today for Tomorrow";
-    const finalText = "Uqidev";
+    const finalText = "UQIDEV";
     const [showInitialText, setShowInitialText] = useState(true);
     const [showColorBlock, setShowColorBlock] = useState(false);
     const [showFinalText, setShowFinalText] = useState(false);
