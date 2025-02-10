@@ -17,7 +17,7 @@ const Details = () => {
                         </p>
                     </div>
 
-                    {/* Right Side - Image */}
+                    {/* Right Side - Image hhj */}
 
 
                     <div className='bg-gradient-to-b from-black to-neutral-800 rounded-3xl border border-neutral-800'>
