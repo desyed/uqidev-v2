@@ -171,7 +171,7 @@ export default function WebDevelopmentPage() {
         </section>
 
         {/* Technologies & Tools */}
-        <section className="container py-12 md:py-24 lg:py-32 border-b bg-muted/30">
+        <section className="container py-12 md:py-24 lg:py-32 border-b ">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <Badge variant="outline" className="mb-4 border-primary text-primary">
@@ -298,7 +298,7 @@ export default function WebDevelopmentPage() {
         </section>
 
         {/* Pricing Options */}
-        <section className="container py-12 md:py-24 lg:py-32 border-b bg-muted/30">
+        <section className="container py-12 md:py-24 lg:py-32 border-b">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4 border-primary text-primary">
               Pricing
@@ -479,7 +479,7 @@ export default function WebDevelopmentPage() {
         </section>
 
         {/* Testimonials */}
-        <section className="container py-12 md:py-24 lg:py-32 border-b bg-muted/30">
+        <section className="container py-12 md:py-24 lg:py-32 border-b ">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4 border-primary text-primary">
               Client Testimonials
@@ -535,7 +535,7 @@ export default function WebDevelopmentPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="container py-12 md:py-24 lg:py-32 bg-muted/30">
+        <section className="container mb-12 rounded-2xl py-12 md:py-24 lg:py-32 bg-muted/30">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
               Start Your <span className="text-primary">Web Project</span> Today

@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Menu, X } from "lucide-react"
 import { usePathname } from "next/navigation"
+import Image from "next/image"
+import logo from "@/public/logo.png"
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -57,9 +59,7 @@ export default function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center">
-            <span className="text-xs font-bold text-primary-foreground">UQI</span>
-          </div>
+         <Image src={logo} alt="UQIDEV" width={40} height={40} />
           <span className="text-xl font-bold">UQIDEV</span>
         </Link>
 

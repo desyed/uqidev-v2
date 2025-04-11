@@ -293,7 +293,7 @@ export default function StartupsPage() {
         </section>
 
         {/* Success Stories */}
-        <section className="container py-12 md:py-24 lg:py-32 border-b bg-muted/30">
+        <section className="container py-12 md:py-24 lg:py-32 border-b ">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4 border-primary text-primary">
               Success Stories
@@ -309,7 +309,7 @@ export default function StartupsPage() {
         </section>
 
         {/* Contact Form */}
-        <section id="contact-form" className="container py-12 md:py-24 lg:py-32 bg-muted/30">
+        <section id="contact-form" className="container py-12 md:py-24 lg:py-32 ">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <Badge variant="outline" className="mb-4 border-primary text-primary">

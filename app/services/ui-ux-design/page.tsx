@@ -168,7 +168,7 @@ export default function UiUxDesignPage() {
         </section>
 
         {/* Our Design Process */}
-        <section className="container py-12 md:py-24 lg:py-32 border-b bg-muted/30">
+        <section className="container py-12 md:py-24 lg:py-32 border-b ">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4 border-primary text-primary">
               Our Process
@@ -246,7 +246,7 @@ export default function UiUxDesignPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="container py-12 md:py-24 lg:py-32 bg-muted/30">
+        <section className="container mb-12 rounded-2xl py-12 md:py-24 lg:py-32 bg-muted/30">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
               Start Your <span className="text-primary">Design Project</span> Today
