@@ -107,9 +107,11 @@ export default function Footer() {
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Subscribe</h3>
             <p className="mb-4 text-sm text-muted-foreground">Get the latest updates and offers from UQIDEV.</p>
             <div className="flex gap-2">
-              <Input type="email" placeholder="Email address" className="rounded-full" />
-              <Button size="icon" className="rounded-full">
-                <ArrowRight className="h-4 w-4" />
+              <div>
+                <Input type="email" placeholder="Email address" className="rounded-full" />
+              </div>
+              <Button size="icon" className="rounded-full w-10 h-50">
+                <ArrowRight className="" />
                 <span className="sr-only">Subscribe</span>
               </Button>
             </div>
