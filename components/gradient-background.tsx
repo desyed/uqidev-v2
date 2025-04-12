@@ -32,9 +32,9 @@ export default function GradientBackground() {
 
         // Create gradient background
         const gradient = ctx.createLinearGradient(0, 0, width, height)
-        gradient.addColorStop(0, "rgba(255, 95, 0, 0.1)") // Orange (UQIDEV brand color)
+        gradient.addColorStop(0, "rgba(255, 95, 0, 0.1)")
         gradient.addColorStop(0.5, "rgba(255, 255, 255, 0.05)")
-        gradient.addColorStop(1, "rgba(0, 200, 255, 0.1)") // Blue accent
+        gradient.addColorStop(1, "rgba(0, 200, 255, 0.1)")
 
         ctx.fillStyle = gradient
         ctx.fillRect(0, 0, width, height)

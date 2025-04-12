@@ -37,6 +37,11 @@ export default function ClientLogos() {
       logo: "/clients/logo5.png",
       width: 125
     },
+    { 
+      name: "Client 6", 
+      logo: "/clients/logo6.png",
+      width: 125
+    },
   ]
 
   // Auto-scrolling logos for small screens, grid for larger screens
@@ -47,7 +52,7 @@ export default function ClientLogos() {
         {clientLogos.map((client, index) => (
           <div
             key={index}
-            className="group flex h-20 w-auto items-center justify-center rounded-md border border-border/40 bg-background/80 backdrop-blur-sm px-6 py-4 transition-all duration-300 hover:shadow-md hover:border-primary/30"
+            className="group flex h-16 w-40 items-center justify-center rounded-md border border-border/40 bg-background/80 backdrop-blur-sm px-6 py-4 transition-all duration-300 hover:shadow-md hover:border-primary/30"
           >
             <Image 
               src={client.logo} 

@@ -32,78 +32,6 @@ export default function GetStartedPage() {
           </div>
         </section>
 
-        {/* Process Section */}
-        <section className="container py-12 md:py-24 lg:py-32">
-          <div className="flex flex-col items-center text-center mb-12">
-            <Badge variant="outline" className="mb-4 border-primary text-primary">
-              Our Process
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
-              How We <span className="text-primary">Work</span>
-            </h2>
-            <p className="text-muted-foreground max-w-[800px]">
-              Our streamlined process ensures your project is completed efficiently and to your satisfaction.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="border-primary/20 bg-background/50 backdrop-blur-sm">
-              <CardHeader>
-                <div className="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center mb-4">
-                  <span className="font-bold text-primary text-xl">1</span>
-                </div>
-                <CardTitle>Discovery</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  We start by understanding your requirements, goals, and vision for the project through a detailed
-                  consultation.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-primary/20 bg-background/50 backdrop-blur-sm">
-              <CardHeader>
-                <div className="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center mb-4">
-                  <span className="font-bold text-primary text-xl">2</span>
-                </div>
-                <CardTitle>Planning</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  We create a detailed project plan including timeline, milestones, and deliverables based on your
-                  requirements.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-primary/20 bg-background/50 backdrop-blur-sm">
-              <CardHeader>
-                <div className="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center mb-4">
-                  <span className="font-bold text-primary text-xl">3</span>
-                </div>
-                <CardTitle>Development</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Our team works on implementing your project with regular updates and opportunities for feedback.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-primary/20 bg-background/50 backdrop-blur-sm">
-              <CardHeader>
-                <div className="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center mb-4">
-                  <span className="font-bold text-primary text-xl">4</span>
-                </div>
-                <CardTitle>Delivery</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  We deliver the final product after thorough testing and quality assurance, ensuring it meets all
-                  requirements.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
         {/* Project Form Section */}
         <section className="container py-12 md:py-24 lg:py-32 border-t">
           <div className="grid md:grid-cols-2 gap-12">
@@ -270,6 +198,78 @@ export default function GetStartedPage() {
                 </Button>
               </form>
             </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="container py-12 md:py-24 lg:py-32">
+          <div className="flex flex-col items-center text-center mb-12">
+            <Badge variant="outline" className="mb-4 border-primary text-primary">
+              Our Process
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
+              How We <span className="text-primary">Work</span>
+            </h2>
+            <p className="text-muted-foreground max-w-[800px]">
+              Our streamlined process ensures your project is completed efficiently and to your satisfaction.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="border-primary/20 bg-background/50 backdrop-blur-sm">
+              <CardHeader>
+                <div className="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center mb-4">
+                  <span className="font-bold text-primary text-xl">1</span>
+                </div>
+                <CardTitle>Discovery</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  We start by understanding your requirements, goals, and vision for the project through a detailed
+                  consultation.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-primary/20 bg-background/50 backdrop-blur-sm">
+              <CardHeader>
+                <div className="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center mb-4">
+                  <span className="font-bold text-primary text-xl">2</span>
+                </div>
+                <CardTitle>Planning</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  We create a detailed project plan including timeline, milestones, and deliverables based on your
+                  requirements.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-primary/20 bg-background/50 backdrop-blur-sm">
+              <CardHeader>
+                <div className="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center mb-4">
+                  <span className="font-bold text-primary text-xl">3</span>
+                </div>
+                <CardTitle>Development</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Our team works on implementing your project with regular updates and opportunities for feedback.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-primary/20 bg-background/50 backdrop-blur-sm">
+              <CardHeader>
+                <div className="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center mb-4">
+                  <span className="font-bold text-primary text-xl">4</span>
+                </div>
+                <CardTitle>Delivery</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  We deliver the final product after thorough testing and quality assurance, ensuring it meets all
+                  requirements.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </section>
 

@@ -64,14 +64,14 @@ const Pricing = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="mt-8">
+                        {/* <div className="mt-8">
                             <Button variant="outline" className="gap-2 rounded-full px-8" asChild>
                                 <Link href="/contact">
                                     Get a custom quote
                                     <ArrowRight className="h-4 w-4" />
                                 </Link>
                             </Button>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="mt-12 text-center">
                         <p className="text-muted-foreground mb-4">Need a custom solution?</p>

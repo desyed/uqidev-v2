@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Star } from "lucide-react"
+import Image from "next/image"
 
 export default function TestimonialCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -17,22 +18,17 @@ export default function TestimonialCarousel() {
     {
       quote:
         "UQIDEV delivered our e-commerce platform on time and within budget. Their attention to detail and technical expertise exceeded our expectations. We've seen a 40% increase in online sales since launch.",
-      author: "John Doe",
-      position: "CEO, TechStart Inc.",
+      author: "Frantz Arty",
+      position: "Angel Investor/Founder at VideoGift",
+      image: "/frantzarty.jpg",
       rating: 5,
     },
     {
       quote:
         "Working with UQIDEV was a game-changer for our startup. They understood our vision and delivered a product that our users love. Their affordable rates allowed us to get to market faster than expected.",
-      author: "Sarah Johnson",
-      position: "Founder, InnovateCo",
-      rating: 5,
-    },
-    {
-      quote:
-        "The team at UQIDEV provided exceptional service from start to finish. Their communication was clear, and they were always available to answer questions. I highly recommend them for any development project.",
-      author: "Michael Chen",
-      position: "Product Manager, GrowthTech",
+      author: "Jenny Stanley",
+      position: "Founder & MD at Appetite Creative ",
+      image: "/jenny.png",
       rating: 5,
     },
   ]
@@ -64,9 +60,14 @@ export default function TestimonialCarousel() {
                     ))}
                   </div>
                   <blockquote className="mb-6 text-xl font-medium italic">"{testimonial.quote}"</blockquote>
-                  <div>
-                    <p className="font-semibold">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.position}</p>
+                  <div className="flex items-center gap-3">
+                    <div>
+                      <Image src={testimonial.image} alt={testimonial.author} width={40} height={40} className="rounded-full" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">{testimonial.author}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.position}</p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -98,4 +99,5 @@ export default function TestimonialCarousel() {
     </div>
   )
 }
+
 

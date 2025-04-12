@@ -9,9 +9,11 @@ import ModernGridBackground from "@/components/modern-grid-background"
 import PricingTable from "@/components/pricing-table"
 import ProcessSteps from "@/components/process-steps"
 import TestimonialCarousel from "@/components/testimonial-carousel"
-import ContactForm from "@/components/contact-form"
+
 import FloatingCTA from "@/components/floating-cta"
 import FAQAccordion from "@/components/faq-accordion"
+import Image from "next/image"
+import ContactForm from "@/components/contact-form"
 
 export default function Home() {
   return (
@@ -69,11 +71,11 @@ export default function Home() {
                 </blockquote>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
-                    JM
+                    <Image className="rounded-full" alt="frantz" src="/frantzarty.jpg" width={100} height={100} />
                   </div>
                   <div>
-                    <p className="font-medium">James Miller</p>
-                    <p className="text-sm text-muted-foreground">CTO, TechFusion</p>
+                    <p className="font-medium">Frantz Arty</p>
+                    <p className="text-sm text-muted-foreground">Angel Investor/Founder at <a className="text-primary" href="https://www.videogift.com/">VideoGift</a></p>
                   </div>
                 </div>
               </div>
@@ -144,7 +146,7 @@ export default function Home() {
           <div className="grid gap-12 md:grid-cols-2">
             <div>
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-                <span className="text-primary">development costs</span> reduced by 40% with our resources.
+                <span className="text-primary">Development costs</span> reduced by 40% with our resources.
               </h2>
               <div className="grid grid-cols-2 gap-8 mt-8">
                 <div className="border-l-4 border-primary pl-4">
@@ -193,16 +195,15 @@ export default function Home() {
       {/* Pricing Section */}
       <section className="border-t border-border/40 vercel-section py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          {/* <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl mb-4">Transparent Pricing</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Choose the plan that works best for your needs. All plans include our quality guarantee and dedicated
               support.
             </p>
-          </div>
-          <PricingTable />
+          </div> */}
           <div className="mt-16 max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl font-bold mb-4">Flexible Pricing Options</h3>
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">Flexible Pricing Options</h3>
             <p className="text-lg text-muted-foreground mb-6">
               We offer both hourly and project-based pricing to accommodate different needs and project types.
             </p>

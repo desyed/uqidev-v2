@@ -11,8 +11,7 @@ import Footer from "@/components/footer"
 
 export default function ContactPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background font-mono">
-      <Header />
+    <div className="flex min-h-screen flex-col bg-background">
 
       <main className="flex-1">
         {/* Hero Section */}
@@ -31,6 +30,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form Section */}
+        
         <section className="container py-12 md:py-24 lg:py-32">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                     <div>
                       <h4 className="font-bold">Phone</h4>
                       <a href="tel:+1234567890" className="text-primary hover:underline">
-                        +1 (234) 567-890
+                        +1 833 467 0010
                       </a>
                     </div>
                   </div>
@@ -119,7 +119,9 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h4 className="font-bold">Location</h4>
-                      <p className="text-muted-foreground">Remote team with global presence</p>
+                      <p className="text-muted-foreground">131 Continental Dr
+                        Suite 305
+                        New York, DE 19713</p>
                     </div>
                   </div>
                 </div>
@@ -231,8 +233,6 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   )
 }
