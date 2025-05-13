@@ -8,7 +8,7 @@ export default function OrganizationStructuredData() {
     sameAs: [
       "https://facebook.com/uqidev",
       "https://twitter.com/uqidev",
-      "https://linkedin.com/company/uqidev",
+      "https://www.linkedin.com/company/uqidev",
       "https://instagram.com/uqidev",
     ],
     description:

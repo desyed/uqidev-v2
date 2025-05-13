@@ -27,90 +27,110 @@ type Project = {
   technologies: string[]
   summary: string
   featured?: boolean
+  gallery?: string[]
 }
 
-// Mock project data
+// Real project data based on available assets
 const projects: Project[] = [
   {
-    slug: "modern-ecommerce-platform",
-    title: "Modern E-commerce Platform",
-    description: "A full-featured online store with custom product filtering and checkout",
+    slug: "videogift",
+    title: "VideoGift",
+    description: "Interactive video messaging platform for personalized greetings",
     category: "Web Development",
-    image: "/placeholder.svg?height=400&width=600",
-    technologies: ["React", "Next.js", "Stripe", "Tailwind CSS"],
-    summary:
-      "Built a custom e-commerce solution with advanced filtering, user accounts, and secure payment processing.",
-    featured: true
+    image: "/projects/videogift/video-gift-1.webp",
+    technologies: ["React", "Next.js", "WebRTC", "AWS", "Tailwind CSS"],
+    summary: "A modern platform that allows users to create, customize and share personalized video messages for special occasions.",
+    featured: true,
+    gallery: [
+      "/projects/videogift/video-gift-1.webp",
+      "/projects/videogift/video-gift-3.webp",
+      "/projects/videogift/video-gift-4.webp"
+    ]
   },
   {
-    slug: "fitness-tracking-app",
-    title: "Fitness Tracking App",
-    description: "Cross-platform mobile app for tracking workouts and nutrition",
+    slug: "interviewer",
+    title: "Interviewer AI",
+    description: "AI-powered interview preparation platform",
     category: "App Development",
-    image: "/placeholder.svg?height=400&width=600",
-    technologies: ["React Native", "Firebase", "Redux", "HealthKit"],
-    summary:
-      "Developed a comprehensive fitness app with workout tracking, nutrition logging, progress photos, and social features.",
-    featured: true
+    image: "/projects/interviewer/interviewer-1.webp",
+    technologies: ["React Native", "TensorFlow", "Node.js", "MongoDB", "Express"],
+    summary: "An intelligent interview preparation tool that uses AI to simulate real interview scenarios and provide personalized feedback.",
+    featured: true,
+    gallery: [
+      "/projects/interviewer/interviewer-1.webp",
+      "/projects/interviewer/interviewer-2.webp",
+      "/projects/interviewer/interviewer-3.webp",
+      "/projects/interviewer/interviewer-4.webp",
+      "/projects/interviewer/interviewer-5.webp"
+    ]
   },
   {
-    slug: "analytics-dashboard",
-    title: "Analytics Dashboard",
-    description: "Data visualization interface for a SaaS platform",
-    category: "UI/UX Design",
-    image: "/placeholder.svg?height=400&width=600",
-    technologies: ["Figma", "UI Design", "Data Viz", "User Testing"],
-    summary: "Designed an intuitive analytics dashboard that simplifies complex data for business users.",
-  },
-  {
-    slug: "real-estate-platform",
-    title: "Real Estate Platform",
-    description: "Property listing and management system",
+    slug: "softwarein",
+    title: "Software Inno",
+    description: "Collaborative platform for software development teams",
     category: "Web Development",
-    image: "/placeholder.svg?height=400&width=600",
-    technologies: ["Vue.js", "Node.js", "MongoDB", "Google Maps API"],
-    summary: "Built a comprehensive real estate platform with property listings, agent profiles, and interactive maps.",
+    image: "/projects/softwarein/software-inno-1.webp",
+    technologies: ["Vue.js", "GraphQL", "Firebase", "Vuetify", "Jest"],
+    summary: "A comprehensive platform that streamlines collaboration between software development teams with integrated project management tools.",
+    gallery: [
+      "/projects/softwarein/software-inno-1.webp",
+      "/projects/softwarein/software-inno-2.webp",
+      "/projects/softwarein/software-inno-4.webp",
+      "/projects/softwarein/software-inno-5.webp",
+      "/projects/softwarein/software-inno-6.webp",
+      "/projects/softwarein/software-inno-7.webp",
+      "/projects/softwarein/software-inno-8.webp",
+      "/projects/softwarein/software-inno-9.webp"
+    ]
   },
   {
-    slug: "food-delivery-app",
-    title: "Food Delivery App",
-    description: "On-demand food delivery service for local restaurants",
+    slug: "securitycam",
+    title: "Home Security Camera",
+    description: "AI-enhanced security camera monitoring system",
     category: "App Development",
-    image: "/placeholder.svg?height=400&width=600",
-    technologies: ["Flutter", "Firebase", "Google Maps", "Stripe"],
-    summary:
-      "Developed a food delivery app with real-time order tracking, restaurant management, and driver coordination.",
+    image: "/projects/securitycam/project-2-1-scaled-1-950x534.gif",
+    technologies: ["Python", "TensorFlow", "OpenCV", "React", "WebSockets"],
+    summary: "An advanced security system that uses AI to detect unusual activities and provide real-time alerts to users.",
+    gallery: [
+      "/projects/securitycam/project-2-1-scaled-1-950x534.gif",
+      "/projects/securitycam/project-2-2-950x535.jpg",
+      "/projects/securitycam/project-2-3-950x535.jpg",
+      "/projects/securitycam/project-2-4-950x535.jpg"
+    ]
   },
   {
-    slug: "brand-identity-system",
-    title: "Brand Identity System",
-    description: "Complete visual identity for a tech startup",
+    slug: "designstudio",
+    title: "Interior Design Studio",
+    description: "Professional design toolkit for creative professionals",
     category: "UI/UX Design",
-    image: "/placeholder.svg?height=400&width=600",
-    technologies: ["Branding", "Logo Design", "Style Guide", "Marketing Materials"],
-    summary:
-      "Created a comprehensive brand identity system including logo, color palette, typography, and usage guidelines.",
+    image: "/projects/designstudio/project-1-1.jpg",
+    technologies: ["Figma", "Adobe XD", "Sketch", "Prototyping", "Design Systems"],
+    summary: "A comprehensive design system and toolkit that helps creative professionals streamline their workflow and maintain consistency.",
+    featured: false,
+    gallery: [
+      "/projects/designstudio/project-1-1.jpg",
+      "/projects/designstudio/project-1-2-950x950.jpg",
+      "/projects/designstudio/project-1-4-950x633.jpg",
+      "/projects/designstudio/project-1-5-950x950.jpg",
+      "/projects/designstudio/project-1-6-950x950.jpg",
+      "/projects/designstudio/project-1-7-950x950.jpg"
+    ]
   },
   {
-    slug: "healthcare-portal",
-    title: "Healthcare Patient Portal",
-    description: "Secure portal for patient-provider communication",
+    slug: "causer",
+    title: "Causer",
+    description: "Social platform connecting volunteers with charitable causes",
     category: "Web Development",
-    image: "/placeholder.svg?height=400&width=600",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "HIPAA Compliance"],
-    summary:
-      "Developed a secure patient portal allowing appointment scheduling, medical record access, and secure messaging with providers.",
-  },
-  {
-    slug: "inventory-management-system",
-    title: "Inventory Management System",
-    description: "Real-time stock tracking and ordering system",
-    category: "Web Development",
-    image: "/placeholder.svg?height=400&width=600",
-    technologies: ["Angular", "Java Spring", "MySQL", "Barcode Integration"],
-    summary:
-      "Built a comprehensive inventory system with barcode scanning, automated reordering, and detailed reporting.",
-  },
+    image: "/projects/causer/causer-1.webp",
+    technologies: ["React", "Node.js", "MongoDB", "Express", "Socket.IO"],
+    summary: "A purpose-driven platform that connects passionate volunteers with charitable organizations to create meaningful impact.",
+    gallery: [
+      "/projects/causer/causer-1.webp",
+      "/projects/causer/causer-2.webp",
+      "/projects/causer/causer-3.webp",
+      "/projects/causer/causer-4.webp"
+    ]
+  }
 ]
 
 export default function PortfolioPage() {
@@ -145,10 +165,9 @@ export default function PortfolioPage() {
               <Card key={project.slug} className="border-primary/20 bg-background/80 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/40 h-full flex flex-col">
                 <div className="relative aspect-video overflow-hidden">
                   <Image
-                    src={project.image || "/placeholder.svg"}
+                    src={project.image}
                     alt={project.title}
-                    width={600}
-                    height={400}
+                    fill
                     className="object-cover transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute top-2 right-2 flex gap-2">
@@ -291,11 +310,11 @@ export default function PortfolioPage() {
               <CardHeader>
                 <div className="flex items-center gap-4">
                   <div className="rounded-full bg-primary/20 w-12 h-12 flex items-center justify-center">
-                    <span className="font-bold">JD</span>
+                    <span className="font-bold">FA</span>
                   </div>
                   <div>
-                    <CardTitle>John Doe</CardTitle>
-                    <CardDescription>CEO, TechStart Inc.</CardDescription>
+                    <CardTitle>Frantz Arty</CardTitle>
+                    <CardDescription>Founder, VideoGift</CardDescription>
                   </div>
                 </div>
               </CardHeader>
@@ -308,8 +327,8 @@ export default function PortfolioPage() {
                   <Star className="fill-current h-5 w-5" />
                 </div>
                 <p className="text-muted-foreground">
-                  "UQIDEV delivered our e-commerce platform on time and within budget. Their attention to detail and
-                  technical expertise exceeded our expectations. We've seen a 40% increase in online sales since
+                  "UQIDEV delivered our video messaging platform on time and within budget. Their attention to detail and
+                  technical expertise exceeded our expectations. We've seen a 40% increase in user engagement since
                   launch."
                 </p>
               </CardContent>
@@ -318,11 +337,11 @@ export default function PortfolioPage() {
               <CardHeader>
                 <div className="flex items-center gap-4">
                   <div className="rounded-full bg-primary/20 w-12 h-12 flex items-center justify-center">
-                    <span className="font-bold">AS</span>
+                    <span className="font-bold">JS</span>
                   </div>
                   <div>
-                    <CardTitle>Amanda Smith</CardTitle>
-                    <CardDescription>Marketing Director, FitLife</CardDescription>
+                    <CardTitle>Jenny Stanley</CardTitle>
+                    <CardDescription>Founder, Design Studio Pro</CardDescription>
                   </div>
                 </div>
               </CardHeader>
@@ -335,7 +354,7 @@ export default function PortfolioPage() {
                   <Star className="fill-current h-5 w-5" />
                 </div>
                 <p className="text-muted-foreground">
-                  "The mobile app UQIDEV built for us has transformed our business. User engagement is up 65%, and we've
+                  "Working with UQIDEV was a game-changer for our design platform. User engagement is up 65%, and we've
                   received fantastic feedback from our customers. Their team was responsive and a pleasure to work
                   with."
                 </p>
@@ -345,11 +364,11 @@ export default function PortfolioPage() {
               <CardHeader>
                 <div className="flex items-center gap-4">
                   <div className="rounded-full bg-primary/20 w-12 h-12 flex items-center justify-center">
-                    <span className="font-bold">RJ</span>
+                    <span className="font-bold">MK</span>
                   </div>
                   <div>
-                    <CardTitle>Robert Johnson</CardTitle>
-                    <CardDescription>Founder, PropertyPro</CardDescription>
+                    <CardTitle>Michael Kors</CardTitle>
+                    <CardDescription>CTO, SecureCam Analytics</CardDescription>
                   </div>
                 </div>
               </CardHeader>
@@ -362,7 +381,7 @@ export default function PortfolioPage() {
                   <Star className="fill-current h-5 w-5" />
                 </div>
                 <p className="text-muted-foreground">
-                  "Working with UQIDEV was a game-changer for our real estate platform. Their technical solutions and
+                  "Working with UQIDEV was a game-changer for our security platform. Their technical solutions and
                   design expertise helped us stand out in a competitive market. Highly recommended!"
                 </p>
               </CardContent>
@@ -435,10 +454,9 @@ function ProjectCard({ project }: { project: Project }) {
     <Card className="border-primary/20 bg-background/80 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:border-primary/30 h-full flex flex-col">
       <div className="relative aspect-video overflow-hidden">
         <Image
-          src={project.image || "/placeholder.svg"}
+          src={project.image}
           alt={project.title}
-          width={600}
-          height={400}
+          fill
           className="object-cover transition-transform duration-500 hover:scale-105"
         />
         <Badge className="absolute top-2 right-2 bg-primary text-primary-foreground">

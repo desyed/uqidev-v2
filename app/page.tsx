@@ -347,9 +347,9 @@ export default function Home() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="border-t border-border/40 vercel-section py-24 bg-muted/30">
+      <section className="border-t border-border/40 vercel-section py-12 md:py-20 lg:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
             <div>
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl mb-4">Ready to start your project?</h2>
               <p className="text-lg text-muted-foreground mb-6">
@@ -376,7 +376,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-background/80 backdrop-blur-sm border border-border/40 rounded-lg p-6">
+            <div className="bg-background/80 backdrop-blur-sm border border-border/40 rounded-lg p-4 sm:p-6 md:p-8">
               <ContactForm />
             </div>
           </div>

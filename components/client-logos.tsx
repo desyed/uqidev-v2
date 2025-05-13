@@ -1,15 +1,11 @@
 "use client"
 
 import Image from "next/image"
-import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
+import { useHasMounted } from "@/lib/client-utils"
 
 export default function ClientLogos() {
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
+  const isClient = useHasMounted()
 
   const clientLogos = [
     { 
@@ -71,7 +67,7 @@ export default function ClientLogos() {
 
       {/* Mobile - Scrolling Carousel */}
       <div className="flex md:hidden overflow-hidden relative py-4">
-        <div className="animate-marquee flex items-center gap-8 whitespace-nowrap">
+        <div className={cn("flex items-center gap-8 whitespace-nowrap", isClient && "animate-marquee")}>
           {[...clientLogos, ...clientLogos, ...clientLogos].map((client, index) => (
             <div
               key={index}

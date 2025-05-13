@@ -91,16 +91,12 @@ export default function ContactPage() {
               <div className="border border-primary/20 rounded-lg p-8 bg-background/50 backdrop-blur-sm">
                 <h3 className="text-xl font-bold mb-6">Contact Information</h3>
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-full bg-primary/10 w-10 h-10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold">Email</h4>
-                      <a href="mailto:contact@uqidev.com" className="text-primary hover:underline">
-                        contact@uqidev.com
-                      </a>
-                    </div>
+                  <div className="flex items-center gap-2">
+                    <Mail className="h-4 w-4 text-muted-foreground" />
+                    <span className="text-sm text-muted-foreground">Email:</span>
+                    <a href="mailto:contact@uqidev.com" className="text-primary hover:underline">
+                      contact@uqidev.com
+                    </a>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="rounded-full bg-primary/10 w-10 h-10 flex items-center justify-center flex-shrink-0">

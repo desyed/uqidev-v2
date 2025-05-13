@@ -206,8 +206,8 @@ export default function UiUxDesignPage() {
         </section>
 
         {/* Contact Form */}
-        <section id="contact-form" className="container py-12 md:py-24 lg:py-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <section id="contact-form" className="container py-12 md:py-20 lg:py-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
             <div>
               <Badge variant="outline" className="mb-4 border-primary text-primary">
                 Get Started
@@ -239,7 +239,7 @@ export default function UiUxDesignPage() {
                 </div>
               </div>
             </div>
-            <div className="bg-background/80 backdrop-blur-sm border border-border/40 rounded-lg p-6">
+            <div className="bg-background/80 backdrop-blur-sm border border-border/40 rounded-lg p-4 sm:p-6 md:p-8">
               <ContactForm />
             </div>
           </div>

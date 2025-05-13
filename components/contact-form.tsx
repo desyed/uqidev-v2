@@ -109,7 +109,7 @@ export default function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="text-center py-12">
+      <div className="text-center py-6 md:py-8">
         <div className="mx-auto w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4">
           <CheckCircle className="h-8 w-8 text-primary" />
         </div>
@@ -126,17 +126,17 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="container py-12 md:py-24 lg:py-32">
-      <div className="grid md:grid-cols-2 gap-12">
+    <div className="w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tighter mb-4">
             Send Us a <span className="text-primary">Message</span>
           </h2>
-          <p className="text-muted-foreground mb-8">
+          <p className="text-muted-foreground mb-6">
             Fill out the form and we'll get back to you.
           </p>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid sm:grid-cols-2 gap-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label htmlFor="firstName" className="text-sm font-medium">
                   First Name
@@ -216,7 +216,7 @@ export default function ContactForm() {
                 placeholder="Tell us about your project..."
                 value={formData.message}
                 onChange={handleChange}
-                className={`min-h-[150px] border-primary/20 bg-background ${
+                className={`min-h-[120px] border-primary/20 bg-background ${
                   errors.message ? "border-red-500 ring-red-500" : ""
                 }`}
               />
@@ -229,24 +229,20 @@ export default function ContactForm() {
             </Button>
           </form>
         </div>
-        <div className="space-y-8">
-          <div className="border border-primary/20 rounded-lg p-8 bg-background/50 backdrop-blur-sm">
-            <h3 className="text-xl font-bold mb-6">Contact Information</h3>
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="rounded-full bg-primary/10 w-10 h-10 flex items-center justify-center">
-                  <Mail className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-bold">Email</h4>
-                  <a href="mailto:contact@uqidev.com" className="text-primary hover:underline">
-                    contact@uqidev.com
-                  </a>
-                </div>
+        <div className="hidden lg:block space-y-6">
+          <div className="border border-primary/20 rounded-lg p-6 bg-background/50 backdrop-blur-sm">
+            <h3 className="text-xl font-bold mb-4">Contact Information</h3>
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-muted-foreground" />
+                <span className="text-sm text-muted-foreground">Email:</span>
+                <a href="mailto:contact@uqidev.com" className="text-primary hover:underline">
+                  contact@uqidev.com
+                </a>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="rounded-full bg-primary/10 w-10 h-10 flex items-center justify-center">
-                  <Phone className="h-5 w-5 text-primary" />
+              <div className="flex items-start gap-3">
+                <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center">
+                  <Phone className="h-4 w-4 text-primary" />
                 </div>
                 <div>
                   <h4 className="font-bold">Phone</h4>
@@ -255,9 +251,9 @@ export default function ContactForm() {
                   </a>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="rounded-full bg-primary/10 w-10 h-10 flex items-center justify-center">
-                  <MapPin className="h-5 w-5 text-primary" />
+              <div className="flex items-start gap-3">
+                <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center">
+                  <MapPin className="h-4 w-4 text-primary" />
                 </div>
                 <div>
                   <h4 className="font-bold">Location</h4>
@@ -269,8 +265,8 @@ export default function ContactForm() {
               </div>
             </div>
           </div>
-          <div className="border border-primary/20 rounded-lg p-8 bg-background/50 backdrop-blur-sm">
-            <h3 className="text-xl font-bold mb-6">Business Hours</h3>
+          <div className="border border-primary/20 rounded-lg p-6 bg-background/50 backdrop-blur-sm">
+            <h3 className="text-xl font-bold mb-4">Business Hours</h3>
             <div className="space-y-2 text-muted-foreground">
               <div className="flex justify-between">
                 <span>Monday - Friday</span>
@@ -288,6 +284,44 @@ export default function ContactForm() {
           </div>
         </div>
       </div>
-    </section>
+      
+      <div className="block lg:hidden mt-8 space-y-6">
+        <div className="border border-primary/20 rounded-lg p-6 bg-background/50 backdrop-blur-sm">
+          <h3 className="text-xl font-bold mb-4">Contact Information</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="flex items-center gap-2">
+              <Mail className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm text-muted-foreground">Email:</span>
+              <a href="mailto:contact@uqidev.com" className="text-primary hover:underline">
+                contact@uqidev.com
+              </a>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center">
+                <Phone className="h-4 w-4 text-primary" />
+              </div>
+              <div>
+                <h4 className="font-bold">Phone</h4>
+                <a href="tel:+18334670010" className="text-primary hover:underline">
+                  +1 833 467 0010
+                </a>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center">
+                <MapPin className="h-4 w-4 text-primary" />
+              </div>
+              <div>
+                <h4 className="font-bold">Location</h4>
+                <p className="text-muted-foreground">
+                  131 Continental Dr, Suite 305<br />
+                  New York, DE 19713
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }

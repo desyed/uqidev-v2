@@ -21,19 +21,19 @@ export default function Footer() {
             </p>
             <div className="mt-4 flex space-x-4">
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://x.com/dev_syedshihab" target="_blank" rel="noopener noreferrer">
                   <Twitter className="h-5 w-5" />
-                  <span className="sr-only">Twitter</span>
+                  <span className="sr-only">X (Twitter)</span>
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/uqi-dev" target="_blank" rel="noopener noreferrer">
                   <Github className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/company/uqidev" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
                 </a>
@@ -105,7 +105,7 @@ export default function Footer() {
 
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Subscribe</h3>
-            <p className="mb-4 text-sm text-muted-foreground">Get the latest updates and offers from UQIDEV.</p>
+            <p className="mb-4 text-sm text-muted-foreground">Get the latest updates and offers from UQIDEV, Inc.</p>
             <div className="flex gap-2">
               <div>
                 <Input type="email" placeholder="Email address" className="rounded-full" />

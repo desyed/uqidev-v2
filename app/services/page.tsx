@@ -123,430 +123,436 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <Tabs defaultValue="web" className="w-full max-w-3xl mx-auto mb-12">
-            <TabsList className="grid w-full grid-cols-3">
+          <Tabs defaultValue="web" className="w-full">
+            <TabsList className="grid w-full grid-cols-3 max-w-3xl mx-auto mb-12">
               <TabsTrigger value="web">Web Development</TabsTrigger>
               <TabsTrigger value="app">App Development</TabsTrigger>
               <TabsTrigger value="design">UI/UX Design</TabsTrigger>
             </TabsList>
+            
+            <TabsContent value="web">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                  <Badge variant="outline" className="mb-4 border-primary text-primary">
+                    Web Development
+                  </Badge>
+                  <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
+                    Full-Stack <span className="text-primary">Web Development</span>
+                  </h2>
+                  <p className="text-muted-foreground mb-6">
+                    We build responsive, high-performance websites and web applications that deliver exceptional user
+                    experiences across all devices.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
+                        <Globe className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold">Responsive Website Design</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Mobile-first designs that look great on any device, from smartphones to desktops.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
+                        <ShoppingCart className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold">E-commerce Solutions</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Custom online stores with secure payment processing, inventory management, and order tracking.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
+                        <FileCode className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold">CMS Integration</h3>
+                        <p className="text-sm text-muted-foreground">
+                          WordPress, Shopify, and custom CMS solutions that make content management easy.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
+                        <Server className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold">API Development</h3>
+                        <p className="text-sm text-muted-foreground">
+                          RESTful and GraphQL APIs that connect your web applications to third-party services and databases.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-8">
+                    <Button className="gap-2 rounded-full px-8" asChild>
+                      <Link href="/get-started?service=web">
+                        Get Started
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+                <div className="border border-primary/20 rounded-lg p-8 bg-background/50 backdrop-blur-sm">
+                  <Tabs defaultValue="frontend">
+                    <TabsList className="grid w-full grid-cols-2 mb-8">
+                      <TabsTrigger value="frontend">Frontend</TabsTrigger>
+                      <TabsTrigger value="backend">Backend</TabsTrigger>
+                    </TabsList>
+                    <TabsContent value="frontend" className="space-y-4">
+                      <h3 className="font-bold">Frontend Technologies</h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Code className="h-5 w-5 text-primary" />
+                          <span>React.js</span>
+                        </div>
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Code className="h-5 w-5 text-primary" />
+                          <span>Next.js</span>
+                        </div>
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Code className="h-5 w-5 text-primary" />
+                          <span>Vue.js</span>
+                        </div>
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Code className="h-5 w-5 text-primary" />
+                          <span>Tailwind CSS</span>
+                        </div>
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Code className="h-5 w-5 text-primary" />
+                          <span>TypeScript</span>
+                        </div>
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Code className="h-5 w-5 text-primary" />
+                          <span>Angular</span>
+                        </div>
+                      </div>
+                    </TabsContent>
+                    <TabsContent value="backend" className="space-y-4">
+                      <h3 className="font-bold">Backend Technologies</h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Server className="h-5 w-5 text-primary" />
+                          <span>Node.js</span>
+                        </div>
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Server className="h-5 w-5 text-primary" />
+                          <span>Express</span>
+                        </div>
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Server className="h-5 w-5 text-primary" />
+                          <span>Python/Django</span>
+                        </div>
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Server className="h-5 w-5 text-primary" />
+                          <span>PHP/Laravel</span>
+                        </div>
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Database className="h-5 w-5 text-primary" />
+                          <span>MongoDB</span>
+                        </div>
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Database className="h-5 w-5 text-primary" />
+                          <span>PostgreSQL</span>
+                        </div>
+                      </div>
+                    </TabsContent>
+                  </Tabs>
+                  <div className="mt-8 p-4 bg-muted/30 rounded-md border border-primary/10">
+                    <h4 className="font-bold mb-2">Starting at</h4>
+                    <div className="text-4xl font-bold text-primary">
+                      $35<span className="text-sm font-normal text-muted-foreground">/hour</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      For basic web development tasks. Complex projects are quoted based on requirements.
+                    </p>
+                    <div className="mt-4 text-sm text-primary">15% discount for long-term contracts</div>
+                    <Button className="w-full mt-4 gap-2" asChild>
+                      <Link href="/get-started?service=web">
+                        Get Started
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="app">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="border border-primary/20 rounded-lg p-8 bg-background/50 backdrop-blur-sm order-2 md:order-1">
+                  <div className="grid grid-cols-2 gap-4 mb-8">
+                    <div className="aspect-square rounded-md bg-muted/50 flex items-center justify-center">
+                      <Smartphone className="h-12 w-12 text-primary" />
+                    </div>
+                    <div className="aspect-square rounded-md bg-muted/50 flex items-center justify-center">
+                      <Layout className="h-12 w-12 text-primary" />
+                    </div>
+                    <div className="aspect-square rounded-md bg-muted/50 flex items-center justify-center">
+                      <Code className="h-12 w-12 text-primary" />
+                    </div>
+                    <div className="aspect-square rounded-md bg-muted/50 flex items-center justify-center">
+                      <Database className="h-12 w-12 text-primary" />
+                    </div>
+                  </div>
+                  <Tabs defaultValue="native">
+                    <TabsList className="grid w-full grid-cols-2 mb-8">
+                      <TabsTrigger value="native">Native Apps</TabsTrigger>
+                      <TabsTrigger value="cross">Cross-Platform</TabsTrigger>
+                    </TabsList>
+                    <TabsContent value="native" className="space-y-4">
+                      <h3 className="font-bold">Native App Development</h3>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Smartphone className="h-5 w-5 text-primary" />
+                          <span>iOS (Swift/SwiftUI)</span>
+                        </div>
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Smartphone className="h-5 w-5 text-primary" />
+                          <span>Android (Kotlin/Java)</span>
+                        </div>
+                      </div>
+                    </TabsContent>
+                    <TabsContent value="cross" className="space-y-4">
+                      <h3 className="font-bold">Cross-Platform Development</h3>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Code className="h-5 w-5 text-primary" />
+                          <span>React Native</span>
+                        </div>
+                        <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
+                          <Code className="h-5 w-5 text-primary" />
+                          <span>Flutter</span>
+                        </div>
+                      </div>
+                    </TabsContent>
+                  </Tabs>
+                  <div className="mt-8 p-4 bg-muted/30 rounded-md border border-primary/10">
+                    <h4 className="font-bold mb-2">Starting at</h4>
+                    <div className="text-4xl font-bold text-primary">
+                      $50<span className="text-sm font-normal text-muted-foreground">/hour</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      For app development tasks. Complete app projects are quoted based on complexity.
+                    </p>
+                    <div className="mt-4 text-sm text-primary">15% discount for long-term contracts</div>
+                    <Button className="w-full mt-4 gap-2" asChild>
+                      <Link href="/get-started?service=app">
+                        Get Started
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+                <div className="order-1 md:order-2">
+                  <Badge variant="outline" className="mb-4 border-primary text-primary">
+                    App Development
+                  </Badge>
+                  <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
+                    Native & Cross-Platform <span className="text-primary">Mobile Apps</span>
+                  </h2>
+                  <p className="text-muted-foreground mb-6">
+                    We develop high-performance mobile applications for iOS and Android that engage users and drive business
+                    growth.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
+                        <Smartphone className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold">iOS & Android Apps</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Native mobile applications built with Swift, SwiftUI, Kotlin, and Java for optimal performance.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
+                        <Code className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold">Cross-Platform Development</h3>
+                        <p className="text-sm text-muted-foreground">
+                          React Native and Flutter apps that work seamlessly across multiple platforms from a single
+                          codebase.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
+                        <Layers className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold">App Maintenance & Updates</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Ongoing support, bug fixes, and feature updates to keep your app running smoothly.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
+                        <Server className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold">Backend Integration</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Connecting your mobile apps to APIs, databases, and third-party services for a complete solution.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-8">
+                    <Button className="gap-2 rounded-full px-8" asChild>
+                      <Link href="/get-started?service=app">
+                        Get Started
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="design">
+              <div className="grid md:grid-cols-2 gap-12 items-center mt-24">
+                <div>
+                  <Badge variant="outline" className="mb-4 border-primary text-primary">
+                    UI/UX Design
+                  </Badge>
+                  <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
+                    User-Centered <span className="text-primary">Design</span>
+                  </h2>
+                  <p className="text-muted-foreground mb-6">
+                    We create intuitive, engaging user interfaces and experiences that delight users and achieve business
+                    goals.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
+                        <Layout className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold">User Interface Design</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Visually appealing interfaces that align with your brand and enhance user engagement.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
+                        <Users className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold">User Experience Optimization</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Research-driven design that improves usability, accessibility, and user satisfaction.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
+                        <Lightbulb className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold">Wireframing & Prototyping</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Low and high-fidelity prototypes that visualize your product before development begins.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
+                        <Rocket className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold">Design Systems</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Comprehensive design systems that ensure consistency across all your digital products.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-8">
+                    <Button className="gap-2 rounded-full px-8" asChild>
+                      <Link href="/get-started?service=design">
+                        Get Started
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+                <div className="border border-primary/20 rounded-lg p-8 bg-background/50 backdrop-blur-sm">
+                  <div className="space-y-6 mb-8">
+                    <div className="space-y-2">
+                      <h3 className="font-bold">Our Design Process</h3>
+                      <div className="flex items-center gap-3">
+                        <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center flex-shrink-0">
+                          <span className="font-bold text-primary">1</span>
+                        </div>
+                        <div className="p-3 rounded-md bg-muted/50 w-full">
+                          <span className="font-medium">Research & Discovery</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center flex-shrink-0">
+                          <span className="font-bold text-primary">2</span>
+                        </div>
+                        <div className="p-3 rounded-md bg-muted/50 w-full">
+                          <span className="font-medium">Wireframing</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center flex-shrink-0">
+                          <span className="font-bold text-primary">3</span>
+                        </div>
+                        <div className="p-3 rounded-md bg-muted/50 w-full">
+                          <span className="font-medium">Visual Design</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center flex-shrink-0">
+                          <span className="font-bold text-primary">4</span>
+                        </div>
+                        <div className="p-3 rounded-md bg-muted/50 w-full">
+                          <span className="font-medium">Prototyping</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center flex-shrink-0">
+                          <span className="font-bold text-primary">5</span>
+                        </div>
+                        <div className="p-3 rounded-md bg-muted/50 w-full">
+                          <span className="font-medium">User Testing</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-8 p-4 bg-muted/30 rounded-md border border-primary/10">
+                    <h4 className="font-bold mb-2">Starting at</h4>
+                    <div className="text-4xl font-bold text-primary">
+                      $45<span className="text-sm font-normal text-muted-foreground">/hour</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      For UI/UX design tasks. Complete design projects are quoted based on scope.
+                    </p>
+                    <div className="mt-4 text-sm text-primary">15% discount for long-term contracts</div>
+                    <Button className="w-full mt-4 gap-2" asChild>
+                      <Link href="/get-started?service=design">
+                        Get Started
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
           </Tabs>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <Badge variant="outline" className="mb-4 border-primary text-primary">
-                Web Development
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
-                Full-Stack <span className="text-primary">Web Development</span>
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                We build responsive, high-performance websites and web applications that deliver exceptional user
-                experiences across all devices.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
-                    <Globe className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Responsive Website Design</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Mobile-first designs that look great on any device, from smartphones to desktops.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
-                    <ShoppingCart className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">E-commerce Solutions</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Custom online stores with secure payment processing, inventory management, and order tracking.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
-                    <FileCode className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">CMS Integration</h3>
-                    <p className="text-sm text-muted-foreground">
-                      WordPress, Shopify, and custom CMS solutions that make content management easy.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
-                    <Server className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">API Development</h3>
-                    <p className="text-sm text-muted-foreground">
-                      RESTful and GraphQL APIs that connect your web applications to third-party services and databases.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8">
-                <Button className="gap-2 rounded-full px-8" asChild>
-                  <Link href="/get-started?service=web">
-                    Get Started
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-            <div className="border border-primary/20 rounded-lg p-8 bg-background/50 backdrop-blur-sm">
-              <Tabs defaultValue="frontend">
-                <TabsList className="grid w-full grid-cols-2 mb-8">
-                  <TabsTrigger value="frontend">Frontend</TabsTrigger>
-                  <TabsTrigger value="backend">Backend</TabsTrigger>
-                </TabsList>
-                <TabsContent value="frontend" className="space-y-4">
-                  <h3 className="font-bold">Frontend Technologies</h3>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Code className="h-5 w-5 text-primary" />
-                      <span>React.js</span>
-                    </div>
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Code className="h-5 w-5 text-primary" />
-                      <span>Next.js</span>
-                    </div>
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Code className="h-5 w-5 text-primary" />
-                      <span>Vue.js</span>
-                    </div>
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Code className="h-5 w-5 text-primary" />
-                      <span>Tailwind CSS</span>
-                    </div>
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Code className="h-5 w-5 text-primary" />
-                      <span>TypeScript</span>
-                    </div>
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Code className="h-5 w-5 text-primary" />
-                      <span>Angular</span>
-                    </div>
-                  </div>
-                </TabsContent>
-                <TabsContent value="backend" className="space-y-4">
-                  <h3 className="font-bold">Backend Technologies</h3>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Server className="h-5 w-5 text-primary" />
-                      <span>Node.js</span>
-                    </div>
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Server className="h-5 w-5 text-primary" />
-                      <span>Express</span>
-                    </div>
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Server className="h-5 w-5 text-primary" />
-                      <span>Python/Django</span>
-                    </div>
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Server className="h-5 w-5 text-primary" />
-                      <span>PHP/Laravel</span>
-                    </div>
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Database className="h-5 w-5 text-primary" />
-                      <span>MongoDB</span>
-                    </div>
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Database className="h-5 w-5 text-primary" />
-                      <span>PostgreSQL</span>
-                    </div>
-                  </div>
-                </TabsContent>
-              </Tabs>
-              <div className="mt-8 p-4 bg-muted/30 rounded-md border border-primary/10">
-                <h4 className="font-bold mb-2">Starting at</h4>
-                <div className="text-4xl font-bold text-primary">
-                  $35<span className="text-sm font-normal text-muted-foreground">/hour</span>
-                </div>
-                <p className="text-sm text-muted-foreground mt-2">
-                  For basic web development tasks. Complex projects are quoted based on requirements.
-                </p>
-                <div className="mt-4 text-sm text-primary">15% discount for long-term contracts</div>
-                <Button className="w-full mt-4 gap-2" asChild>
-                  <Link href="/get-started?service=web">
-                    Get Started
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center mt-24">
-            <div className="border border-primary/20 rounded-lg p-8 bg-background/50 backdrop-blur-sm order-2 md:order-1">
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="aspect-square rounded-md bg-muted/50 flex items-center justify-center">
-                  <Smartphone className="h-12 w-12 text-primary" />
-                </div>
-                <div className="aspect-square rounded-md bg-muted/50 flex items-center justify-center">
-                  <Layout className="h-12 w-12 text-primary" />
-                </div>
-                <div className="aspect-square rounded-md bg-muted/50 flex items-center justify-center">
-                  <Code className="h-12 w-12 text-primary" />
-                </div>
-                <div className="aspect-square rounded-md bg-muted/50 flex items-center justify-center">
-                  <Database className="h-12 w-12 text-primary" />
-                </div>
-              </div>
-              <Tabs defaultValue="native">
-                <TabsList className="grid w-full grid-cols-2 mb-8">
-                  <TabsTrigger value="native">Native Apps</TabsTrigger>
-                  <TabsTrigger value="cross">Cross-Platform</TabsTrigger>
-                </TabsList>
-                <TabsContent value="native" className="space-y-4">
-                  <h3 className="font-bold">Native App Development</h3>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Smartphone className="h-5 w-5 text-primary" />
-                      <span>iOS (Swift/SwiftUI)</span>
-                    </div>
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Smartphone className="h-5 w-5 text-primary" />
-                      <span>Android (Kotlin/Java)</span>
-                    </div>
-                  </div>
-                </TabsContent>
-                <TabsContent value="cross" className="space-y-4">
-                  <h3 className="font-bold">Cross-Platform Development</h3>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Code className="h-5 w-5 text-primary" />
-                      <span>React Native</span>
-                    </div>
-                    <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50">
-                      <Code className="h-5 w-5 text-primary" />
-                      <span>Flutter</span>
-                    </div>
-                  </div>
-                </TabsContent>
-              </Tabs>
-              <div className="mt-8 p-4 bg-muted/30 rounded-md border border-primary/10">
-                <h4 className="font-bold mb-2">Starting at</h4>
-                <div className="text-4xl font-bold text-primary">
-                  $50<span className="text-sm font-normal text-muted-foreground">/hour</span>
-                </div>
-                <p className="text-sm text-muted-foreground mt-2">
-                  For app development tasks. Complete app projects are quoted based on complexity.
-                </p>
-                <div className="mt-4 text-sm text-primary">15% discount for long-term contracts</div>
-                <Button className="w-full mt-4 gap-2" asChild>
-                  <Link href="/get-started?service=app">
-                    Get Started
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-            <div className="order-1 md:order-2">
-              <Badge variant="outline" className="mb-4 border-primary text-primary">
-                App Development
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
-                Native & Cross-Platform <span className="text-primary">Mobile Apps</span>
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                We develop high-performance mobile applications for iOS and Android that engage users and drive business
-                growth.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
-                    <Smartphone className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">iOS & Android Apps</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Native mobile applications built with Swift, SwiftUI, Kotlin, and Java for optimal performance.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
-                    <Code className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Cross-Platform Development</h3>
-                    <p className="text-sm text-muted-foreground">
-                      React Native and Flutter apps that work seamlessly across multiple platforms from a single
-                      codebase.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
-                    <Layers className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">App Maintenance & Updates</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Ongoing support, bug fixes, and feature updates to keep your app running smoothly.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
-                    <Server className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Backend Integration</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Connecting your mobile apps to APIs, databases, and third-party services for a complete solution.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8">
-                <Button className="gap-2 rounded-full px-8" asChild>
-                  <Link href="/get-started?service=app">
-                    Get Started
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center mt-24">
-            <div>
-              <Badge variant="outline" className="mb-4 border-primary text-primary">
-                UI/UX Design
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
-                User-Centered <span className="text-primary">Design</span>
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                We create intuitive, engaging user interfaces and experiences that delight users and achieve business
-                goals.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
-                    <Layout className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">User Interface Design</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Visually appealing interfaces that align with your brand and enhance user engagement.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
-                    <Users className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">User Experience Optimization</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Research-driven design that improves usability, accessibility, and user satisfaction.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
-                    <Lightbulb className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Wireframing & Prototyping</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Low and high-fidelity prototypes that visualize your product before development begins.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center mt-1">
-                    <Rocket className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Design Systems</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Comprehensive design systems that ensure consistency across all your digital products.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8">
-                <Button className="gap-2 rounded-full px-8" asChild>
-                  <Link href="/get-started?service=design">
-                    Get Started
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-            <div className="border border-primary/20 rounded-lg p-8 bg-background/50 backdrop-blur-sm">
-              <div className="space-y-6 mb-8">
-                <div className="space-y-2">
-                  <h3 className="font-bold">Our Design Process</h3>
-                  <div className="flex items-center gap-3">
-                    <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center flex-shrink-0">
-                      <span className="font-bold text-primary">1</span>
-                    </div>
-                    <div className="p-3 rounded-md bg-muted/50 w-full">
-                      <span className="font-medium">Research & Discovery</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center flex-shrink-0">
-                      <span className="font-bold text-primary">2</span>
-                    </div>
-                    <div className="p-3 rounded-md bg-muted/50 w-full">
-                      <span className="font-medium">Wireframing</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center flex-shrink-0">
-                      <span className="font-bold text-primary">3</span>
-                    </div>
-                    <div className="p-3 rounded-md bg-muted/50 w-full">
-                      <span className="font-medium">Visual Design</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center flex-shrink-0">
-                      <span className="font-bold text-primary">4</span>
-                    </div>
-                    <div className="p-3 rounded-md bg-muted/50 w-full">
-                      <span className="font-medium">Prototyping</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="rounded-full bg-primary/10 w-8 h-8 flex items-center justify-center flex-shrink-0">
-                      <span className="font-bold text-primary">5</span>
-                    </div>
-                    <div className="p-3 rounded-md bg-muted/50 w-full">
-                      <span className="font-medium">User Testing</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8 p-4 bg-muted/30 rounded-md border border-primary/10">
-                <h4 className="font-bold mb-2">Starting at</h4>
-                <div className="text-4xl font-bold text-primary">
-                  $45<span className="text-sm font-normal text-muted-foreground">/hour</span>
-                </div>
-                <p className="text-sm text-muted-foreground mt-2">
-                  For UI/UX design tasks. Complete design projects are quoted based on scope.
-                </p>
-                <div className="mt-4 text-sm text-primary">15% discount for long-term contracts</div>
-                <Button className="w-full mt-4 gap-2" asChild>
-                  <Link href="/get-started?service=design">
-                    Get Started
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* Project-Based Pricing */}
@@ -726,8 +732,8 @@ export default function ServicesPage() {
         </section>
 
         {/* Contact Form Section */}
-        <section id="contact-form" className="container py-12 md:py-24 lg:py-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <section id="contact-form" className="container py-12 md:py-20 lg:py-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
             <div>
               <Badge variant="outline" className="mb-4 border-primary text-primary">
                 Get in Touch
@@ -766,7 +772,7 @@ export default function ServicesPage() {
                 </p>
               </div>
             </div>
-            <div className="bg-background/80 backdrop-blur-sm border border-border/40 rounded-lg p-6">
+            <div className="bg-background/80 backdrop-blur-sm border border-border/40 rounded-lg p-4 sm:p-6 md:p-8">
               <ContactForm />
             </div>
           </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
+import { useHasMounted } from "@/lib/client-utils"
 
 interface ModernGridBackgroundProps {
   className?: string
@@ -9,13 +9,12 @@ interface ModernGridBackgroundProps {
 
 export default function ModernGridBackground({ className = "" }: ModernGridBackgroundProps) {
   const { theme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const mounted = useHasMounted()
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) return null
+  if (!mounted) {
+    // Return a placeholder with the same structure but no visible content
+    return <div className={`fixed inset-0 -z-10 ${className}`} aria-hidden="true"></div>
+  }
 
   return (
     <div className={`fixed inset-0 -z-10 ${className}`} aria-hidden="true">

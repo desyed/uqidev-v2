@@ -1,18 +1,15 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Star } from "lucide-react"
 import Image from "next/image"
+import { useHasMounted } from "@/lib/client-utils"
 
 export default function TestimonialCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const mounted = useHasMounted()
 
   const testimonials = [
     {
@@ -41,7 +38,10 @@ export default function TestimonialCarousel() {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
   }
 
-  if (!mounted) return null
+  if (!mounted) {
+    // Return a placeholder with similar structure to prevent layout shift
+    return <div className="relative h-64"></div>
+  }
 
   return (
     <div className="relative">
