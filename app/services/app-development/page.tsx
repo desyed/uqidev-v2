@@ -168,7 +168,7 @@ export default function AppDevelopmentPage() {
 
         {/* Contact Form */}
         <section id="contact-form" className="container py-12 md:py-20 lg:py-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+          <div className="grid grid-cols-1 gap-8 md:gap-12 items-start">
             <div>
               <Badge variant="outline" className="mb-4 border-primary text-primary">
                 Get Started

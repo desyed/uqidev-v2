@@ -15,6 +15,7 @@ import { Menu, X } from "lucide-react"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
 import logo from "@/public/logo.png"
+import { trackPageView } from "@/lib/analytics"
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -42,6 +43,10 @@ export default function Navbar() {
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
+
+  const handleNavigation = (path: string, label: string) => {
+    trackPageView(path, label);
+  }
 
   if (!isMounted) {
     return (
@@ -76,6 +81,7 @@ export default function Navbar() {
                         <a
                           className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                           href="/services"
+                          onClick={() => handleNavigation('/services', 'Services')}
                         >
                           <div className="mb-2 mt-4 text-lg font-medium">Development Services</div>
                           <p className="text-sm leading-tight text-muted-foreground">
@@ -89,6 +95,7 @@ export default function Navbar() {
                         <a
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground shine-border"
                           href="/services/web-development"
+                          onClick={() => handleNavigation('/services/web-development', 'Web Development')}
                         >
                           <div className="text-sm font-medium leading-none">Web Development</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
@@ -102,6 +109,7 @@ export default function Navbar() {
                         <a
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground shine-border"
                           href="/services/app-development"
+                          onClick={() => handleNavigation('/services/app-development', 'App Development')}
                         >
                           <div className="text-sm font-medium leading-none">App Development</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
@@ -115,6 +123,7 @@ export default function Navbar() {
                         <a
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground shine-border"
                           href="/services/ui-ux-design"
+                          onClick={() => handleNavigation('/services/ui-ux-design', 'UI/UX Design')}
                         >
                           <div className="text-sm font-medium leading-none">UI/UX Design</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
@@ -135,6 +144,7 @@ export default function Navbar() {
                         <a
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground shine-border"
                           href="/solutions/startups"
+                          onClick={() => handleNavigation('/solutions/startups', 'For Startups')}
                         >
                           <div className="text-sm font-medium leading-none">For Startups</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
@@ -148,6 +158,7 @@ export default function Navbar() {
                         <a
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground shine-border"
                           href="/solutions/enterprise"
+                          onClick={() => handleNavigation('/solutions/enterprise', 'For Enterprise')}
                         >
                           <div className="text-sm font-medium leading-none">For Enterprise</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
@@ -161,21 +172,21 @@ export default function Navbar() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/portfolio" legacyBehavior passHref>
-                  <NavigationMenuLink className="shine-border group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                  <NavigationMenuLink className="shine-border group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50" onClick={() => handleNavigation('/portfolio', 'Portfolio')}>
                     Portfolio
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/pricing" legacyBehavior passHref>
-                  <NavigationMenuLink className="shine-border group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                  <NavigationMenuLink className="shine-border group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50" onClick={() => handleNavigation('/pricing', 'Pricing')}>
                     Pricing
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <Link href="/get-started" className="block rounded-md px-3 py-2 text-base font-medium ">
+          <Link href="/get-started" className="block rounded-md px-3 py-2 text-base font-medium " onClick={() => handleNavigation('/get-started', 'Contact Us')}>
             <Button className="w-full rounded-full">Contact Us</Button>
           </Link>
         </div>
@@ -204,18 +215,21 @@ export default function Navbar() {
             <Link
               href="/services/web-development"
               className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+              onClick={() => handleNavigation('/services/web-development', 'Web Development')}
             >
               Web Development
             </Link>
             <Link
               href="/services/app-development"
               className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+              onClick={() => handleNavigation('/services/app-development', 'App Development')}
             >
               App Development
             </Link>
             <Link
               href="/services/ui-ux-design"
               className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+              onClick={() => handleNavigation('/services/ui-ux-design', 'UI/UX Design')}
             >
               UI/UX Design
             </Link>
@@ -226,12 +240,14 @@ export default function Navbar() {
             <Link
               href="/solutions/startups"
               className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+              onClick={() => handleNavigation('/solutions/startups', 'For Startups')}
             >
               For Startups
             </Link>
             <Link
               href="/solutions/enterprise"
               className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+              onClick={() => handleNavigation('/solutions/enterprise', 'For Enterprise')}
             >
               For Enterprise
             </Link>
@@ -241,18 +257,20 @@ export default function Navbar() {
             <Link
               href="/portfolio"
               className="block rounded-md px-3 py-2 text-base font-medium hover:bg-accent hover:text-accent-foreground"
+              onClick={() => handleNavigation('/portfolio', 'Portfolio')}
             >
               Portfolio
             </Link>
             <Link
               href="/pricing"
               className="block rounded-md px-3 py-2 text-base font-medium hover:bg-accent hover:text-accent-foreground"
+              onClick={() => handleNavigation('/pricing', 'Pricing')}
             >
               Pricing
             </Link>
           </div>
 
-          <Link href="/get-started" className="block rounded-md px-3 py-2 text-base font-medium hover:bg-accent hover:text-accent-foreground">
+          <Link href="/get-started" className="block rounded-md px-3 py-2 text-base font-medium hover:bg-accent hover:text-accent-foreground" onClick={() => handleNavigation('/get-started', 'Contact Us')}>
             <Button className="w-full rounded-full">Contact Us</Button>
           </Link>
         </div>

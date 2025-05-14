@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button"
 import { CheckCircle, Mail, MapPin, Phone } from "lucide-react"
 import { Textarea } from "./ui/textarea"
 import { Input } from "./ui/input"
-import emailjs from '@emailjs/browser'
+import { initEmailJS, sendEmail } from "@/components/email-service"
+import { trackEvent } from "@/lib/analytics"
 
 interface FormState {
   firstName: string
@@ -36,12 +37,9 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const EMAILJS_SERVICE_ID = "service_xyjipv2"
-  const EMAILJS_TEMPLATE_ID = "template_d2vmnmi"
-  const EMAILJS_PUBLIC_KEY = "ycgCwEGp7HO-UI5AW"
-
   useEffect(() => {
-    emailjs.init(EMAILJS_PUBLIC_KEY)
+    // Initialize EmailJS when component mounts
+    initEmailJS()
   }, [])
 
   const validateForm = () => {
@@ -88,19 +86,26 @@ export default function ContactForm() {
       message: formData.message
     }
 
-    emailjs
-      .send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams
-      )
+    sendEmail(templateParams)
       .then((result) => {
         console.log("Email sent successfully", result.text)
         setIsSubmitted(true)
+        
+        // Track form submission in Google Analytics
+        trackEvent('form_submission', {
+          form_name: 'contact_form',
+          form_subject: formData.subject
+        });
       })
       .catch((error) => {
         console.error("Failed to send email:", error)
         alert("Failed to send message. Please check your internet connection and try again.")
+        
+        // Track form submission error in Google Analytics
+        trackEvent('form_error', {
+          form_name: 'contact_form',
+          error_message: error.text || 'Unknown error'
+        });
       })
       .finally(() => {
         setIsSubmitting(false)
@@ -127,7 +132,7 @@ export default function ContactForm() {
 
   return (
     <div className="w-full">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold tracking-tighter mb-4">
             Send Us a <span className="text-primary">Message</span>

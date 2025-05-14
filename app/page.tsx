@@ -349,7 +349,7 @@ export default function Home() {
       {/* Contact Form Section */}
       <section className="border-t border-border/40 vercel-section py-12 md:py-20 lg:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+          <div className="grid grid-cols-1 gap-8 md:gap-12 items-start">
             <div>
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl mb-4">Ready to start your project?</h2>
               <p className="text-lg text-muted-foreground mb-6">

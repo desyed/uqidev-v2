@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -7,11 +10,118 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Clock, FileCheck, Rocket } from "lucide-react"
+import { Clock, FileCheck, Rocket, CheckCircle, AlertCircle } from "lucide-react"
+import { initEmailJS, sendEmail } from "@/components/email-service"
+import { useToast } from "@/components/ui/use-toast"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
 export default function GetStartedPage() {
+  const { toast } = useToast()
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    projectType: "web",
+    budget: "",
+    timeline: "",
+    description: "",
+    agreeToTerms: false
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">("idle")
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target
+    setFormData(prev => ({ ...prev, [id]: value }))
+  }
+
+  const handleCheckboxChange = (checked: boolean) => {
+    setFormData(prev => ({ ...prev, agreeToTerms: checked }))
+  }
+
+  const handleSelectChange = (name: string, value: string) => {
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleRadioChange = (value: string) => {
+    setFormData(prev => ({ ...prev, projectType: value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    if (!formData.agreeToTerms) {
+      toast({
+        title: "Please agree to the terms",
+        description: "You must agree to the terms and conditions to submit the form.",
+        variant: "destructive"
+      })
+      return
+    }
+
+    try {
+      setIsSubmitting(true)
+      setFormStatus("idle")
+      
+      // Initialize EmailJS (only needed once, but safe to call multiple times)
+      initEmailJS()
+      
+      // Prepare email parameters
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        reply_to: formData.email,
+        subject: `New Project Request: ${formData.projectType}`,
+        message: `
+Project Details:
+- Name: ${formData.firstName} ${formData.lastName}
+- Email: ${formData.email}
+- Company: ${formData.company || 'N/A'}
+- Project Type: ${formData.projectType}
+- Budget: ${formData.budget}
+- Timeline: ${formData.timeline}
+- Description: ${formData.description}
+        `
+      }
+      
+      // Send email
+      await sendEmail(templateParams)
+      
+      // Success handling
+      setFormStatus("success")
+      toast({
+        title: "Request submitted!",
+        description: "We'll get back to you within 24 hours.",
+      })
+      
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        company: "",
+        projectType: "web",
+        budget: "",
+        timeline: "",
+        description: "",
+        agreeToTerms: false
+      })
+      
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      setFormStatus("error")
+      toast({
+        title: "Something went wrong",
+        description: "There was an error submitting your request. Please try again.",
+        variant: "destructive"
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
 
@@ -80,23 +190,57 @@ export default function GetStartedPage() {
               </div>
             </div>
             <div className="border border-primary/20 rounded-lg p-8 bg-background/50 backdrop-blur-sm">
-              <form className="space-y-6">
+              {formStatus === "success" && (
+                <Alert className="mb-6 bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-900/50">
+                  <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
+                  <AlertTitle>Request Submitted</AlertTitle>
+                  <AlertDescription>
+                    We've received your project details and will get back to you within 24 hours.
+                  </AlertDescription>
+                </Alert>
+              )}
+              
+              {formStatus === "error" && (
+                <Alert className="mb-6 bg-red-50 dark:bg-red-950/20 border-red-200 dark:border-red-900/50">
+                  <AlertCircle className="h-4 w-4 text-red-600 dark:text-red-400" />
+                  <AlertTitle>Something went wrong</AlertTitle>
+                  <AlertDescription>
+                    There was an error submitting your request. Please try again or contact us directly.
+                  </AlertDescription>
+                </Alert>
+              )}
+              
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="space-y-2">
                   <h3 className="text-xl font-bold">Project Details</h3>
                   <p className="text-sm text-muted-foreground">Tell us what you need help with</p>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label htmlFor="first-name" className="text-sm font-medium">
+                    <label htmlFor="firstName" className="text-sm font-medium">
                       First Name
                     </label>
-                    <Input id="first-name" placeholder="John" className="border-primary/20 bg-background" />
+                    <Input 
+                      id="firstName" 
+                      placeholder="John" 
+                      className="border-primary/20 bg-background" 
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="last-name" className="text-sm font-medium">
+                    <label htmlFor="lastName" className="text-sm font-medium">
                       Last Name
                     </label>
-                    <Input id="last-name" placeholder="Doe" className="border-primary/20 bg-background" />
+                    <Input 
+                      id="lastName" 
+                      placeholder="Doe" 
+                      className="border-primary/20 bg-background" 
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                 </div>
                 <div className="space-y-2">
@@ -108,17 +252,26 @@ export default function GetStartedPage() {
                     type="email"
                     placeholder="john.doe@example.com"
                     className="border-primary/20 bg-background"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="company" className="text-sm font-medium">
                     Company (Optional)
                   </label>
-                  <Input id="company" placeholder="Your Company" className="border-primary/20 bg-background" />
+                  <Input 
+                    id="company" 
+                    placeholder="Your Company" 
+                    className="border-primary/20 bg-background" 
+                    value={formData.company}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Project Type</label>
-                  <RadioGroup defaultValue="web">
+                  <RadioGroup value={formData.projectType} onValueChange={handleRadioChange}>
                     <div className="flex flex-col space-y-2">
                       <div className="flex items-center space-x-2">
                         <RadioGroupItem value="web" id="web" />
@@ -141,7 +294,7 @@ export default function GetStartedPage() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Budget Range</label>
-                  <Select>
+                  <Select value={formData.budget} onValueChange={(value) => handleSelectChange("budget", value)}>
                     <SelectTrigger className="border-primary/20 bg-background">
                       <SelectValue placeholder="Select a budget range" />
                     </SelectTrigger>
@@ -157,7 +310,7 @@ export default function GetStartedPage() {
                   <label htmlFor="timeline" className="text-sm font-medium">
                     Timeline
                   </label>
-                  <Select>
+                  <Select value={formData.timeline} onValueChange={(value) => handleSelectChange("timeline", value)}>
                     <SelectTrigger className="border-primary/20 bg-background">
                       <SelectValue placeholder="Select a timeline" />
                     </SelectTrigger>
@@ -177,10 +330,17 @@ export default function GetStartedPage() {
                     id="description"
                     placeholder="Tell us about your project requirements..."
                     className="min-h-[150px] border-primary/20 bg-background"
+                    value={formData.description}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
                 <div className="flex items-start space-x-2">
-                  <Checkbox id="terms" />
+                  <Checkbox 
+                    id="terms" 
+                    checked={formData.agreeToTerms}
+                    onCheckedChange={handleCheckboxChange}
+                  />
                   <div className="grid gap-1.5 leading-none">
                     <label
                       htmlFor="terms"
@@ -193,8 +353,13 @@ export default function GetStartedPage() {
                     </p>
                   </div>
                 </div>
-                <Button type="submit" size="lg" className="w-full">
-                  Submit Request
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Submitting..." : "Submit Request"}
                 </Button>
               </form>
             </div>
